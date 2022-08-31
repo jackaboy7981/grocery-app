@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {DataService} from '../../services/data.service';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-products',
@@ -7,14 +6,10 @@ import {DataService} from '../../services/data.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  products: any[] = [];
+ 
+  @Input("prods") public products :any[] = [];
   
-  private scatid :string = "4";
-  constructor(private dataService: DataService) { 
-    this.dataService.getProducts(this.scatid).subscribe((response: any) => {
-      this.products = response.data;
-      console.log(this.products)
-    })
+  constructor() {
   }
 
   ngOnInit(): void {
