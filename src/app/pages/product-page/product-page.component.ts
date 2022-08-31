@@ -31,6 +31,13 @@ export class ProductPageComponent implements OnInit {
 
    }
 
+   NewSubCat(scatidt:string){
+    this.dataService.getProducts(scatidt).subscribe((response: any) => {
+      this.products = response.data;
+      console.log("newsub cat :"+this.products)
+    })
+   }
+
   ngOnInit(): void {
   }
 
