@@ -1,0 +1,9 @@
+<br>
+<br>
+
+
+    <ul class="nav flex-column">
+        <li class="nav-item" *ngFor="let scat of subcategories" >
+            <div class="nav-link active" (click)="change.emit(scat.subId)">{{scat.subName}}</div>
+        </li>
+    </ul>
